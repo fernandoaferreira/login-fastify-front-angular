@@ -1,0 +1,14 @@
+<h3>Usuarios</h3>
+
+<div *ngIf="(peoples$ | async)?.length > 0; else noperson">
+
+    <ul>
+        <li *ngFor="let p of (peoples$ | async ) "> {{ p.name }} | {{ p.email }}</li>
+    </ul>
+
+
+</div>
+
+<ng-template #noperson>
+    <p>Nenhum usuario encontrado</p>
+</ng-template>
